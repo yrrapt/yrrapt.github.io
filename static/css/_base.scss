@@ -1,0 +1,56 @@
+body {
+    font: #{$fontSize}/#{$lineHeight} $font;
+    color: $black;
+}
+
+.hidden { @include hide; }
+
+a {
+    text-decoration: none;
+    color: $black;
+
+    &:visited {
+        color: black;
+    }
+}
+
+p a {
+    text-decoration: underline;
+}
+
+mark {
+    padding: 0 3px;
+    background-color: #FFA;
+}
+
+#container {
+    margin: 0 auto;
+    @include box-sizing;
+    @if $boxPaddingHor != 0 { max-width: $containerWidth; }
+    @else { max-width: $containerWidth + 2*$padding; }
+    width: 100%;
+}
+
+#padder {
+    @include box-sizing;
+    //! Temporary hotfix
+    // @if $boxPaddingHor != 0 { margin: 0; }
+    // @else { margin: 0 $boxPaddingHor; }
+    margin: 0 $padding;
+}
+
+.row {
+    width: 100%;
+    float: left;
+    clear: both;
+    @include clearfix;
+}
+
+.box {
+    width: 100%;
+    display: inline-block;
+    float: left;
+    padding: $boxPaddingVer $boxPaddingHor;
+    @include clearfix;
+    @include box-sizing;
+}
