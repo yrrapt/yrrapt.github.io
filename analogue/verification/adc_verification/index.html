@@ -18,7 +18,8 @@
 :root {}
 </style>
 <meta property="og:title" content="ADC Verification Techniques" />
-<meta property="og:description" content="ADC Verification Techniques ADC DNL/INL Measurement I never use the DNL &amp; INL calculator. It is so easy to get garbage answers with it. I&rsquo;ve never figured out how to do it reliably. Luckily, it is trivial to do this in Python. First, strobe the output codes of the ADC at the sampling rate and then save them to a file. Just a list. So, the list would look like: 0 0 0 0 0 0 0 ." />
+<meta property="og:description" content="ADC Verification Techniques ADC DNL/INL Measurement From https://www.reddit.com/r/chipdesign/comments/g9fsyg/dnlinl_of_adc_in_cadence:
+ I never use the DNL &amp; INL calculator. It is so easy to get garbage answers with it. I&rsquo;ve never figured out how to do it reliably. Luckily, it is trivial to do this in Python. First, strobe the output codes of the ADC at the sampling rate and then save them to a file. Just a list. So, the list would look like: 0 0 0 0 0 0 0 ." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yrrapt.github.io/analogue/verification/adc_verification/" />
 <meta property="og:image" content="https://yrrapt.github.io/images/og-image.png"/>
@@ -28,12 +29,14 @@
 <meta name="twitter:image" content="https://yrrapt.github.io/images/og-image.png"/>
 
 <meta name="twitter:title" content="ADC Verification Techniques"/>
-<meta name="twitter:description" content="ADC Verification Techniques ADC DNL/INL Measurement I never use the DNL &amp; INL calculator. It is so easy to get garbage answers with it. I&rsquo;ve never figured out how to do it reliably. Luckily, it is trivial to do this in Python. First, strobe the output codes of the ADC at the sampling rate and then save them to a file. Just a list. So, the list would look like: 0 0 0 0 0 0 0 ."/>
+<meta name="twitter:description" content="ADC Verification Techniques ADC DNL/INL Measurement From https://www.reddit.com/r/chipdesign/comments/g9fsyg/dnlinl_of_adc_in_cadence:
+ I never use the DNL &amp; INL calculator. It is so easy to get garbage answers with it. I&rsquo;ve never figured out how to do it reliably. Luckily, it is trivial to do this in Python. First, strobe the output codes of the ADC at the sampling rate and then save them to a file. Just a list. So, the list would look like: 0 0 0 0 0 0 0 ."/>
 <meta itemprop="name" content="ADC Verification Techniques">
-<meta itemprop="description" content="ADC Verification Techniques ADC DNL/INL Measurement I never use the DNL &amp; INL calculator. It is so easy to get garbage answers with it. I&rsquo;ve never figured out how to do it reliably. Luckily, it is trivial to do this in Python. First, strobe the output codes of the ADC at the sampling rate and then save them to a file. Just a list. So, the list would look like: 0 0 0 0 0 0 0 .">
+<meta itemprop="description" content="ADC Verification Techniques ADC DNL/INL Measurement From https://www.reddit.com/r/chipdesign/comments/g9fsyg/dnlinl_of_adc_in_cadence:
+ I never use the DNL &amp; INL calculator. It is so easy to get garbage answers with it. I&rsquo;ve never figured out how to do it reliably. Luckily, it is trivial to do this in Python. First, strobe the output codes of the ADC at the sampling rate and then save them to a file. Just a list. So, the list would look like: 0 0 0 0 0 0 0 .">
 <meta itemprop="datePublished" content="2020-12-20T15:02:03+01:00" />
 <meta itemprop="dateModified" content="2020-12-20T15:02:03+01:00" />
-<meta itemprop="wordCount" content="337">
+<meta itemprop="wordCount" content="336">
 <meta itemprop="image" content="https://yrrapt.github.io/images/og-image.png"/>
 
 
@@ -56,6 +59,8 @@
 <main><h1>ADC Verification Techniques</h1>
 <h1 id="adc-verification-techniques">ADC Verification Techniques</h1>
 <h2 id="adc-dnlinl-measurement">ADC DNL/INL Measurement</h2>
+<p>From <a href="https://www.reddit.com/r/chipdesign/comments/g9fsyg/dnlinl_of_adc_in_cadence:">https://www.reddit.com/r/chipdesign/comments/g9fsyg/dnlinl_of_adc_in_cadence:</a></p>
+<blockquote>
 <p>I never use the DNL &amp; INL calculator. It is so easy to get garbage answers with it. I&rsquo;ve never figured out how to do it reliably. Luckily, it is trivial to do this in Python. First, strobe the output codes of the ADC at the sampling rate and then save them to a file. Just a list. So, the list would look like: <code>0 0 0 0 0 0 0 ... 0 1 1 1 1 1 1 ... 1 2 2 2 2 2... 2</code> and so on.</p>
 <p>Then in Python, MATLAB, or whatever, read in the file and find the average number of samples per code (this is easy, just divide the total number of samples you have by the 2^N of your ADC where N is the resolution). This is your expected value of samples in each code bin.</p>
 <p>Then, do a loop over each code (from 0 to (2^N - 1)). The DNL for each code is simply the difference between the number of codes for that code divided by the average number of samples per code (the expected value). The INL is simply the previous INL plus the current DNL value (i.e the running sum for all previous DNLs value plus the current DNL value). Make sure to initialize INL to 0.</p>
@@ -64,7 +69,7 @@
 <p>So, one more thing, how many points do you need? The DNL resolution is 1/(Number of samples per code).</p>
 <p>So, if you want to know your DNL to 0.1 LSB accuracy, you need 10 samples per code. So if you have a 12-bit ADC, you need 10*2^10 = 10,240 samples minimum.</p>
 <p>Usually you probably want more like 0.01 LSB accuracy so you would need 102,400 samples. If you do a sine test you need WAY more.</p>
-<p>___Taken from <a href="https://www.reddit.com/r/chipdesign/comments/g9fsyg/dnlinl_of_adc_in_cadence___">https://www.reddit.com/r/chipdesign/comments/g9fsyg/dnlinl_of_adc_in_cadence___</a></p>
+</blockquote>
 <div class="edit-meta">
 Last updated on 20 Dec 2020
 

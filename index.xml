@@ -13,7 +13,8 @@
       <pubDate>Sun, 20 Dec 2020 15:02:03 +0100</pubDate>
       
       <guid>https://yrrapt.github.io/analogue/verification/adc_verification/</guid>
-      <description>ADC Verification Techniques ADC DNL/INL Measurement I never use the DNL &amp;amp; INL calculator. It is so easy to get garbage answers with it. I&amp;rsquo;ve never figured out how to do it reliably. Luckily, it is trivial to do this in Python. First, strobe the output codes of the ADC at the sampling rate and then save them to a file. Just a list. So, the list would look like: 0 0 0 0 0 0 0 .</description>
+      <description>ADC Verification Techniques ADC DNL/INL Measurement From https://www.reddit.com/r/chipdesign/comments/g9fsyg/dnlinl_of_adc_in_cadence:
+ I never use the DNL &amp;amp; INL calculator. It is so easy to get garbage answers with it. I&amp;rsquo;ve never figured out how to do it reliably. Luckily, it is trivial to do this in Python. First, strobe the output codes of the ADC at the sampling rate and then save them to a file. Just a list. So, the list would look like: 0 0 0 0 0 0 0 .</description>
     </item>
     
   </channel>
