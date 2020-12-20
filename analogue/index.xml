@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Analogues on Notes</title>
-    <link>http://yrrapt.github.io/analogue/</link>
+    <link>https://yrrapt.github.io/analogue/</link>
     <description>Recent content in Analogues on Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Sun, 20 Dec 2020 15:02:03 +0100</lastBuildDate><atom:link href="http://yrrapt.github.io/analogue/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Dec 2020 15:02:03 +0100</lastBuildDate><atom:link href="https://yrrapt.github.io/analogue/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ADC Verification Techniques</title>
-      <link>http://yrrapt.github.io/analogue/verification/adc_verification/</link>
+      <link>https://yrrapt.github.io/analogue/verification/adc_verification/</link>
       <pubDate>Sun, 20 Dec 2020 15:02:03 +0100</pubDate>
       
-      <guid>http://yrrapt.github.io/analogue/verification/adc_verification/</guid>
+      <guid>https://yrrapt.github.io/analogue/verification/adc_verification/</guid>
       <description>ADC Verification Techniques ADC DNL/INL Measurement I never use the DNL &amp;amp; INL calculator. It is so easy to get garbage answers with it. I&amp;rsquo;ve never figured out how to do it reliably. Luckily, it is trivial to do this in Python. First, strobe the output codes of the ADC at the sampling rate and then save them to a file. Just a list. So, the list would look like: 0 0 0 0 0 0 0 .</description>
     </item>
     
