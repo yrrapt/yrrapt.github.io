@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PLL on Notes</title>
+    <link>https://yrrapt.github.io/analogue/design/pll/</link>
+    <description>Recent content in PLL on Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-uk</language><atom:link href="https://yrrapt.github.io/analogue/design/pll/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PLL References</title>
+      <link>https://yrrapt.github.io/analogue/design/pll/references/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yrrapt.github.io/analogue/design/pll/references/</guid>
+      <description> Spur Reduction Techniques for Phase-Locked Loops Exploiting A Sub-Sampling Phase Detector  </description>
+    </item>
+    
+  </channel>
+</rss>
