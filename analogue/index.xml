@@ -17,5 +17,23 @@
  I never use the DNL &amp;amp; INL calculator. It is so easy to get garbage answers with it. I&amp;rsquo;ve never figured out how to do it reliably. Luckily, it is trivial to do this in Python. First, strobe the output codes of the ADC at the sampling rate and then save them to a file. Just a list. So, the list would look like: 0 0 0 0 0 0 0 .</description>
     </item>
     
+    <item>
+      <title>Inductor Design</title>
+      <link>https://yrrapt.github.io/analogue/design/inductor/inductor-design/</link>
+      <pubDate>Sun, 20 Dec 2020 15:02:03 +0100</pubDate>
+      
+      <guid>https://yrrapt.github.io/analogue/design/inductor/inductor-design/</guid>
+      <description>\[ P = \frac{1}{2} \oint_S \mathbf{E} \times \mathbf{H}^* = \cdot d\mathbf{s} = P_l + 2 j \omega ~ (W_m - W_e) \]</description>
+    </item>
+    
+    <item>
+      <title>PLL References</title>
+      <link>https://yrrapt.github.io/analogue/design/pll/references/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yrrapt.github.io/analogue/design/pll/references/</guid>
+      <description> Spur Reduction Techniques for Phase-Locked Loops Exploiting A Sub-Sampling Phase Detector  </description>
+    </item>
+    
   </channel>
 </rss>
