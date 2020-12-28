@@ -25,5 +25,3 @@ From https://www.reddit.com/r/chipdesign/comments/g9fsyg/dnlinl_of_adc_in_cadenc
 > So, if you want to know your DNL to 0.1 LSB accuracy, you need 10 samples per code. So if you have a 12-bit ADC, you need 10*2^10 = 10,240 samples minimum.
 >
 > Usually you probably want more like 0.01 LSB accuracy so you would need 102,400 samples. If you do a sine test you need WAY more.
-
-
