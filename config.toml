@@ -1,7 +1,11 @@
 baseURL = "https://yrrapt.github.io"
+# baseURL = "http://127.0.01"
 languageCode = "en-uk"
 title = "Notes"
 theme = "hugo-theme-techdoc"
+# relativeURLs = true
+# uglyurls = true
+# canonifyURLs = true
 
 hasCJKLanguage = true
 metaDataFormat = "yaml"
@@ -108,3 +112,8 @@ enableMissingTranslationPlaceholders = false
         "tags",
         "categories",
     ]
+
+[[headers]]
+   for = "/*"
+   [headers.values]
+      Access-Control-Allow-Origin = "*"
