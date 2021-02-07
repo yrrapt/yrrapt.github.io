@@ -43,7 +43,7 @@ Given the assumption that the amplitude of the signal is much greater than the n
 \[ v(t) \approx A \omega_0 t &#43; n(t) \]
 Find when the signal equals zero at time moment k.">
 
-<meta itemprop="wordCount" content="313">
+<meta itemprop="wordCount" content="523">
 <meta itemprop="image" content="https://yrrapt.github.io/images/og-image.png"/>
 
 
@@ -106,11 +106,32 @@ Find when the signal equals zero at time moment k.">
 
 <h2 id="normalised-power-spectral-density">Normalised Power Spectral Density</h2>
 
+<p>Below an ideal oscillator is shown with a single frequency component. A realistic representation is also shown jitter with power around the ideal single tone. The greater the jitter the more the power will be spread around the ideal frequency. The power in the tails is also proportional to the squared amplitude of the oscillating waveform. To obtain a measure of jitter <span  class="math">\( S_v (f) \)</span> may be normalised with respect to the total power in the signal. for a sinusoid this is <span  class="math">\( A^2/2 \)</span>.</p>
+
 <script type="text/tikz">
   \begin{tikzpicture}
-    \draw (0,0) circle (1in);
+    \draw[thick,->] (-6,0) -- (6,0) node[anchor=north west] {$f$};
+    \draw[thick,->] (-6,0) -- (-6,6) node[anchor=south east] {$ S_{~v} ~~(f)$};
+    \draw[->] (0,0) -- (0,5.5) node[anchor=north west] {no~~~~jitter};
+    \node[] at (0,-0.5) {$1/T_{~~0}$};
+    \draw (0,5) .. controls (1,5) and (0,0) .. (3,0);
+    \draw (0,5) .. controls (-1,5) and (0,0) .. (-3,0);
   \end{tikzpicture}
 </script>
+
+<p>The normalised power can also be shifted to DC giving the alternative representation of jitter:</p>
+
+<p><span  class="math">\[ \mathcal{L} \Delta = \frac{S_v \left( \frac{1}{T_0} + \Delta f \right) }{A^2 / 2} \]</span></p>
+
+<script type="text/tikz">
+  \begin{tikzpicture}[]
+    \draw[thick,->] (0,0) -- (6,0) node[anchor=north west] {$\mathnormal{f}$};
+    \draw[thick,->] (0,0) -- (0,6) node[anchor=south east] {$\mathcal{L}(\mathrm{\Delta} f)$};
+    \draw (0,5) .. controls (1,5) and (0,0) .. (3,0);
+  \end{tikzpicture}
+</script>
+
+<p>The units of <span  class="math">\( \mathcal{L} \Delta \)</span> are <span  class="math">\( Hz^{-1} \)</span> but it is common to plot it's logartihm <span  class="math">\( 10 log_{10} \left( \mathcal{L} \Delta \right) \)</span></p>
 
 <hr>
 
@@ -191,6 +212,6 @@ Find when the signal equals zero at time moment k.">
 </script>
 
 <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
-<script src="https://tikzjax.com/v1/tikzjax.js"></script></div>
+<script src="https://tikzjax.com/v1/tikzjax.js" crossorigin="anonymous"></script></div>
 </body>
 </html>
