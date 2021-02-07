@@ -48,12 +48,32 @@ $$ \sigma^2_\tau = {\left ( \frac{T_0}{2 \pi} \right)}^2 \int^{1/2T_0}_0 S_\phi 
 
 ## Normalised Power Spectral Density
 
+Below an ideal oscillator is shown with a single frequency component. A realistic representation is also shown jitter with power around the ideal single tone. The greater the jitter the more the power will be spread around the ideal frequency. The power in the tails is also proportional to the squared amplitude of the oscillating waveform. To obtain a measure of jitter $$ S_v (f) $$ may be normalised with respect to the total power in the signal. for a sinusoid this is $$ A^2/2 $$. 
+
 <script type="text/tikz">
   \begin{tikzpicture}
-    \draw (0,0) circle (1in);
+    \draw[thick,->] (-6,0) -- (6,0) node[anchor=north west] {$f$};
+    \draw[thick,->] (-6,0) -- (-6,6) node[anchor=south east] {$ S_{~v} ~~(f)$};
+    \draw[->] (0,0) -- (0,5.5) node[anchor=north west] {no~~~~jitter};
+    \node[] at (0,-0.5) {$1/T_{~~0}$};
+    \draw (0,5) .. controls (1,5) and (0,0) .. (3,0);
+    \draw (0,5) .. controls (-1,5) and (0,0) .. (-3,0);
   \end{tikzpicture}
 </script>
 
+The normalised power can also be shifted to DC giving the alternative representation of jitter:
+
+$$ \mathcal{L} \Delta = \frac{S_v \left( \frac{1}{T_0} + \Delta f \right) }{A^2 / 2} $$
+
+<script type="text/tikz">
+  \begin{tikzpicture}[]
+    \draw[thick,->] (0,0) -- (6,0) node[anchor=north west] {$\mathnormal{f}$};
+    \draw[thick,->] (0,0) -- (0,6) node[anchor=south east] {$\mathcal{L}(\mathrm{\Delta} f)$};
+    \draw (0,5) .. controls (1,5) and (0,0) .. (3,0);
+  \end{tikzpicture}
+</script>
+
+The units of $$ \mathcal{L} \Delta $$ are $$ Hz^{-1} $$ but it is common to plot it's logartihm $$ 10 log_{10} \left( \mathcal{L} \Delta \right) $$
 
 --------
 
