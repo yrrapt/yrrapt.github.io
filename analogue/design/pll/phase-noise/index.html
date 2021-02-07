@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en-uk">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Jitter and Phase Noise Principles - Notes</title>
+<meta name="description" content="Thoughts and useful things to document">
+<meta name="generator" content="Hugo 0.80.0" />
+<link href="https://yrrapt.github.io/index.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="https://yrrapt.github.io/analogue/design/pll/phase-noise/">
+<link rel="stylesheet" href="https://yrrapt.github.io/css/theme.min.css">
+<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<link rel="stylesheet" href="https://yrrapt.github.io/css/chroma.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script src="https://yrrapt.github.io/js/bundle.js"></script><style>
+:root {}
+</style>
+<meta property="og:title" content="Jitter and Phase Noise Principles" />
+<meta property="og:description" content="Jitter Considering the jitter from a white noise source on a sinusoidal signal described by:
+\[ v(t) = A sin( \omega_0 t) &#43; n(t) \]
+Given the assumption that the amplitude of the signal is much greater than the noise the transition times are only slightly modified. The small signal approximation can be made where:
+\[ v(t) \approx A \omega_0 t &#43; n(t) \]
+Find when the signal equals zero at time moment k." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yrrapt.github.io/analogue/design/pll/phase-noise/" />
+<meta property="og:image" content="https://yrrapt.github.io/images/og-image.png"/>
+<meta property="og:site_name" content="Hugo Techdoc Theme" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yrrapt.github.io/images/og-image.png"/>
+
+<meta name="twitter:title" content="Jitter and Phase Noise Principles"/>
+<meta name="twitter:description" content="Jitter Considering the jitter from a white noise source on a sinusoidal signal described by:
+\[ v(t) = A sin( \omega_0 t) &#43; n(t) \]
+Given the assumption that the amplitude of the signal is much greater than the noise the transition times are only slightly modified. The small signal approximation can be made where:
+\[ v(t) \approx A \omega_0 t &#43; n(t) \]
+Find when the signal equals zero at time moment k."/>
+<meta itemprop="name" content="Jitter and Phase Noise Principles">
+<meta itemprop="description" content="Jitter Considering the jitter from a white noise source on a sinusoidal signal described by:
+\[ v(t) = A sin( \omega_0 t) &#43; n(t) \]
+Given the assumption that the amplitude of the signal is much greater than the noise the transition times are only slightly modified. The small signal approximation can be made where:
+\[ v(t) \approx A \omega_0 t &#43; n(t) \]
+Find when the signal equals zero at time moment k.">
+
+<meta itemprop="wordCount" content="313">
+<meta itemprop="image" content="https://yrrapt.github.io/images/og-image.png"/>
+
+
+
+<meta itemprop="keywords" content="" />
+</head>
+<body><div class="container"><header>
+<h1>Notes</h1>
+<p class="description">Thoughts and useful things to document</p>
+
+</header>
+<div class="global-menu">
+<nav>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/tbd">To Be Defined</a></li></ul>
+</nav>
+</div>
+<div class="content-container">
+<main><h1>Jitter and Phase Noise Principles</h1>
+<h2 id="jitter">Jitter</h2>
+
+<p>Considering the jitter from a white noise source on a sinusoidal signal described by:</p>
+
+<p><span  class="math">\[ v(t) = A sin( \omega_0 t) + n(t) \]</span></p>
+
+<p>Given the assumption that the amplitude of the signal is much greater than the noise the transition times are only slightly modified. The small signal approximation can be made where:</p>
+
+<p><span  class="math">\[ v(t) \approx A \omega_0 t + n(t) \]</span></p>
+
+<p>Find when the signal equals zero at time moment <em>k</em>.</p>
+
+<p><span  class="math">\[ 0 \approx A \omega_0 t_k + n_k \]</span></p>
+
+<p>Thus,</p>
+
+<p><span  class="math">\[ t_k \approx \frac{n_k}{A \omega_0} \]</span></p>
+
+<p>Therefore, the jitter increases with larger noise amplitude, smaller signal amplitude or lower frequency.</p>
+
+<p>The discrete-time noise process <span  class="math">\( n_k \)</span> is white with variance <span  class="math">\( \sigma^2_n \)</span>. Hence absolute jitter is also a discrete-time white noise process with variance:</p>
+
+<p><span  class="math">\[ \sigma^2_\tau = \frac{\sigma^2_n}{A^2 \omega^2_0} \]</span></p>
+
+<p>The sequence <span  class="math">\( \tau_k \)</span> is the <em>absolute jitter</em> of the clock in time units. It can be normalised to radians:</p>
+
+<p><span  class="math">\[ \phi_k = \tau_k \frac{2 \pi}{T_0} = \frac{\sigma^2_n}{A^2}\]</span></p>
+
+<p>The noise in radians is expressed as:</p>
+
+<p><span  class="math">\[ \sigma^2_\phi = \sigma^2_\tau \cdot {\left( \frac{2 \pi}{T_0} \right)}^2  = \frac{\sigma^2_n}{A^2} \]</span></p>
+
+<h2 id="phase-noise">Phase Noise</h2>
+
+<p>Phase noise is the frequency-domain representation of absolute jitter. The phase noise, <span  class="math">\( S_\phi(f) \)</span>, of a clock signal with random jitter is the power spectral density of the sequence <span  class="math">\( \phi_k \)</span>. It specifies the power of <span  class="math">\( \phi_k \)</span> in <span  class="math">\( rad^2 \)</span> within any 1 Hz wide bin of frequency spectrum and has units <span  class="math">\( rad^2 / Hz \)</span>.</p>
+
+<p>The variance of <span  class="math">\( \phi_k \)</span> is given by the integral of <span  class="math">\( S_\phi(f) \)</span> over all frequencies:</p>
+
+<p><span  class="math">\[ \sigma^2_\tau = {\left ( \frac{T_0}{2 \pi} \right)}^2 \int^{1/2T_0}_0 S_\phi (f) \cdot df \]</span></p>
+
+<h2 id="normalised-power-spectral-density">Normalised Power Spectral Density</h2>
+
+<script type="text/tikz">
+  \begin{tikzpicture}
+    \draw (0,0) circle (1in);
+  \end{tikzpicture}
+</script>
+
+<hr>
+
+<p>[1] Carusone, T. C., Johns, D., Martin, K. W., &amp; Johns, D. (2012). <em>Analog integrated circuit design.</em> Hoboken, NJ: John Wiley &amp; Sons.</p>
+<div class="edit-meta">
+
+<br></div><nav class="pagination"><a class="nav nav-prev" href="https://yrrapt.github.io/analogue/design/pll/" title="PLL"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - PLL</a>
+<a class="nav nav-next" href="https://yrrapt.github.io/analogue/design/pll/references/" title="PLL References">Next - PLL References <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
+</footer>
+</main>
+<div class="sidebar">
+
+<nav class="slide-menu">
+<ul>
+<li class=""><a href="https://yrrapt.github.io">Home</a></li>
+
+<li class="parent has-sub-menu"><a href="https://yrrapt.github.io/analogue/">Analogue<span class="mark opened">-</span></a>
+  
+<ul class="sub-menu">
+
+<li class=" has-sub-menu"><a href="https://yrrapt.github.io/analogue/verification/">Verification<span class="mark closed">+</span></a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://yrrapt.github.io/analogue/verification/adc_verification/">ADC Verification Techniques</a></li>
+</ul>
+  
+</li>
+
+<li class="parent has-sub-menu"><a href="https://yrrapt.github.io/analogue/design/">Design<span class="mark opened">-</span></a>
+  
+<ul class="sub-menu">
+
+<li class=" has-sub-menu"><a href="https://yrrapt.github.io/analogue/design/inductor/">Inductors<span class="mark closed">+</span></a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://yrrapt.github.io/analogue/design/inductor/inductor-design/">Inductor Design</a></li>
+<li class=""><a href="https://yrrapt.github.io/analogue/design/inductor/references/">Inductor References</a></li>
+</ul>
+  
+</li>
+
+<li class=" has-sub-menu"><a href="https://yrrapt.github.io/analogue/design/algorithmicdesign/">Algorithmic Design<span class="mark closed">+</span></a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://yrrapt.github.io/analogue/design/algorithmicdesign/common-source/common-source/">Common Source</a></li>
+</ul>
+  
+</li>
+<li class=""><a href="https://yrrapt.github.io/analogue/design/control/references/">Control / Stability References</a></li>
+
+<li class="parent has-sub-menu"><a href="https://yrrapt.github.io/analogue/design/pll/">PLL<span class="mark opened">-</span></a>
+  
+<ul class="sub-menu">
+<li class="active"><a href="https://yrrapt.github.io/analogue/design/pll/phase-noise/">Jitter and Phase Noise Principles</a></li>
+<li class=""><a href="https://yrrapt.github.io/analogue/design/pll/references/">PLL References</a></li>
+<li class=""><a href="https://yrrapt.github.io/analogue/design/pll/vco-design/">VCO Design</a></li>
+</ul>
+  
+</li>
+<li class=""><a href="https://yrrapt.github.io/analogue/design/simulation/references/">Simulation References</a></li>
+</ul>
+  
+</li>
+</ul>
+  
+</li>
+</ul>
+</nav>
+
+
+
+<div class="sidebar-footer"></div>
+</div>
+
+</div><script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+<script src="https://tikzjax.com/v1/tikzjax.js"></script></div>
+</body>
+</html>

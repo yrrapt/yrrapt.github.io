@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>PLL References - Notes</title>
 <meta name="description" content="Thoughts and useful things to document">
-<meta name="generator" content="Hugo 0.79.1" />
+<meta name="generator" content="Hugo 0.80.0" />
 <link href="https://yrrapt.github.io/index.xml" rel="alternate" type="application/rss+xml">
 <link rel="canonical" href="https://yrrapt.github.io/analogue/design/pll/references/">
 <link rel="stylesheet" href="https://yrrapt.github.io/css/theme.min.css">
@@ -18,7 +18,7 @@
 :root {}
 </style>
 <meta property="og:title" content="PLL References" />
-<meta property="og:description" content=" Spur Reduction Techniques for Phase-Locked Loops Exploiting A Sub-Sampling Phase Detector  " />
+<meta property="og:description" content=" Spur Reduction Techniques for Phase-Locked Loops Exploiting A Sub-Sampling Phase Detector A Noise-Shifting Differential Colpitts VCO  " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yrrapt.github.io/analogue/design/pll/references/" />
 <meta property="og:image" content="https://yrrapt.github.io/images/og-image.png"/>
@@ -27,11 +27,11 @@
 <meta name="twitter:image" content="https://yrrapt.github.io/images/og-image.png"/>
 
 <meta name="twitter:title" content="PLL References"/>
-<meta name="twitter:description" content=" Spur Reduction Techniques for Phase-Locked Loops Exploiting A Sub-Sampling Phase Detector  "/>
+<meta name="twitter:description" content=" Spur Reduction Techniques for Phase-Locked Loops Exploiting A Sub-Sampling Phase Detector A Noise-Shifting Differential Colpitts VCO  "/>
 <meta itemprop="name" content="PLL References">
-<meta itemprop="description" content=" Spur Reduction Techniques for Phase-Locked Loops Exploiting A Sub-Sampling Phase Detector  ">
+<meta itemprop="description" content=" Spur Reduction Techniques for Phase-Locked Loops Exploiting A Sub-Sampling Phase Detector A Noise-Shifting Differential Colpitts VCO  ">
 
-<meta itemprop="wordCount" content="11">
+<meta itemprop="wordCount" content="16">
 <meta itemprop="image" content="https://yrrapt.github.io/images/og-image.png"/>
 
 
@@ -54,11 +54,12 @@
 <main><h1>PLL References</h1>
 <ul>
 <li><a href="https://core.ac.uk/download/pdf/11478458.pdf">Spur Reduction Techniques for Phase-Locked Loops Exploiting A Sub-Sampling Phase Detector</a></li>
+<li><a href="https://www.its.caltech.edu/~hajimiri/pdf/NoiseShifting_JSSC.pdf">A Noise-Shifting Differential Colpitts VCO</a></li>
 </ul>
 <div class="edit-meta">
 
-<br></div><nav class="pagination"><a class="nav nav-prev" href="https://yrrapt.github.io/analogue/design/pll/" title="PLL"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - PLL</a>
-<a class="nav nav-next" href="https://yrrapt.github.io/analogue/design/inductor/" title="Inductors">Next - Inductors <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<br></div><nav class="pagination"><a class="nav nav-prev" href="https://yrrapt.github.io/analogue/design/pll/phase-noise/" title="Jitter and Phase Noise Principles"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Jitter and Phase Noise Principles</a>
+<a class="nav nav-next" href="https://yrrapt.github.io/analogue/design/pll/vco-design/" title="VCO Design">Next - VCO Design <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
 </footer>
 </main>
@@ -93,13 +94,25 @@
   
 </li>
 
-<li class="parent has-sub-menu"><a href="https://yrrapt.github.io/analogue/design/pll/">PLL<span class="mark opened">-</span></a>
+<li class=" has-sub-menu"><a href="https://yrrapt.github.io/analogue/design/algorithmicdesign/">Algorithmic Design<span class="mark closed">+</span></a>
   
 <ul class="sub-menu">
-<li class="active"><a href="https://yrrapt.github.io/analogue/design/pll/references/">PLL References</a></li>
+<li class=""><a href="https://yrrapt.github.io/analogue/design/algorithmicdesign/common-source/common-source/">Common Source</a></li>
 </ul>
   
 </li>
+<li class=""><a href="https://yrrapt.github.io/analogue/design/control/references/">Control / Stability References</a></li>
+
+<li class="parent has-sub-menu"><a href="https://yrrapt.github.io/analogue/design/pll/">PLL<span class="mark opened">-</span></a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://yrrapt.github.io/analogue/design/pll/phase-noise/">Jitter and Phase Noise Principles</a></li>
+<li class="active"><a href="https://yrrapt.github.io/analogue/design/pll/references/">PLL References</a></li>
+<li class=""><a href="https://yrrapt.github.io/analogue/design/pll/vco-design/">VCO Design</a></li>
+</ul>
+  
+</li>
+<li class=""><a href="https://yrrapt.github.io/analogue/design/simulation/references/">Simulation References</a></li>
 </ul>
   
 </li>
@@ -116,6 +129,9 @@
 
 </div><script type="text/javascript"
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script></div>
+</script>
+
+<link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+<script src="https://tikzjax.com/v1/tikzjax.js"></script></div>
 </body>
 </html>

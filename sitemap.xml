@@ -38,11 +38,27 @@
   </url>
   
   <url>
+    <loc>https://yrrapt.github.io/analogue/design/algorithmicdesign/</loc>
+  </url>
+  
+  <url>
     <loc>https://yrrapt.github.io/categories/</loc>
   </url>
   
   <url>
+    <loc>https://yrrapt.github.io/analogue/design/algorithmicdesign/common-source/common-source/</loc>
+  </url>
+  
+  <url>
+    <loc>https://yrrapt.github.io/analogue/design/control/references/</loc>
+  </url>
+  
+  <url>
     <loc>https://yrrapt.github.io/analogue/design/inductor/references/</loc>
+  </url>
+  
+  <url>
+    <loc>https://yrrapt.github.io/analogue/design/pll/phase-noise/</loc>
   </url>
   
   <url>
@@ -54,7 +70,15 @@
   </url>
   
   <url>
+    <loc>https://yrrapt.github.io/analogue/design/simulation/references/</loc>
+  </url>
+  
+  <url>
     <loc>https://yrrapt.github.io/tags/</loc>
+  </url>
+  
+  <url>
+    <loc>https://yrrapt.github.io/analogue/design/pll/vco-design/</loc>
   </url>
   
 </urlset>

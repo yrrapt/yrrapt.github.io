@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Algorithmic Design on Notes</title>
+    <link>https://yrrapt.github.io/analogue/design/algorithmicdesign/</link>
+    <description>Recent content in Algorithmic Design on Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-uk</language><atom:link href="https://yrrapt.github.io/analogue/design/algorithmicdesign/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Common Source</title>
+      <link>https://yrrapt.github.io/analogue/design/algorithmicdesign/common-source/common-source/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yrrapt.github.io/analogue/design/algorithmicdesign/common-source/common-source/</guid>
+      <description>Ideal Current Source To design the amplifier we will start with two design specifications: the DC gain and the gain-bandwidth product (GBW).
+These described as:
+$$ A_{DC} = g_m \cdot r_o$$
+$$ GBW = \frac{ g_m }{ 2 \pi C_L }$$
+Let&amp;rsquo;s use an example spec:
+   Parameter Specification     $$ A_{DC} $$ 40 dB   $$ GBW $$ 1 MHz   $$ C_L $$ 10 pF    Let&amp;rsquo;s rearrange using $$ \frac{g_m}{I_d} $$ as a parameter:</description>
+    </item>
+    
+  </channel>
+</rss>

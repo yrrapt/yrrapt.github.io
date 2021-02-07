@@ -27,6 +27,29 @@
     </item>
     
     <item>
+      <title>Common Source</title>
+      <link>https://yrrapt.github.io/analogue/design/algorithmicdesign/common-source/common-source/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yrrapt.github.io/analogue/design/algorithmicdesign/common-source/common-source/</guid>
+      <description>Ideal Current Source To design the amplifier we will start with two design specifications: the DC gain and the gain-bandwidth product (GBW).
+These described as:
+$$ A_{DC} = g_m \cdot r_o$$
+$$ GBW = \frac{ g_m }{ 2 \pi C_L }$$
+Let&amp;rsquo;s use an example spec:
+   Parameter Specification     $$ A_{DC} $$ 40 dB   $$ GBW $$ 1 MHz   $$ C_L $$ 10 pF    Let&amp;rsquo;s rearrange using $$ \frac{g_m}{I_d} $$ as a parameter:</description>
+    </item>
+    
+    <item>
+      <title>Control / Stability References</title>
+      <link>https://yrrapt.github.io/analogue/design/control/references/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yrrapt.github.io/analogue/design/control/references/</guid>
+      <description> Internal and External Op-Amp Compensation: A Control-Centric Tutorial  </description>
+    </item>
+    
+    <item>
       <title>Inductor References</title>
       <link>https://yrrapt.github.io/analogue/design/inductor/references/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -36,12 +59,44 @@
     </item>
     
     <item>
+      <title>Jitter and Phase Noise Principles</title>
+      <link>https://yrrapt.github.io/analogue/design/pll/phase-noise/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yrrapt.github.io/analogue/design/pll/phase-noise/</guid>
+      <description>Jitter Considering the jitter from a white noise source on a sinusoidal signal described by:
+\[ v(t) = A sin( \omega_0 t) + n(t) \]
+Given the assumption that the amplitude of the signal is much greater than the noise the transition times are only slightly modified. The small signal approximation can be made where:
+\[ v(t) \approx A \omega_0 t + n(t) \]
+Find when the signal equals zero at time moment k.</description>
+    </item>
+    
+    <item>
       <title>PLL References</title>
       <link>https://yrrapt.github.io/analogue/design/pll/references/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://yrrapt.github.io/analogue/design/pll/references/</guid>
-      <description> Spur Reduction Techniques for Phase-Locked Loops Exploiting A Sub-Sampling Phase Detector  </description>
+      <description> Spur Reduction Techniques for Phase-Locked Loops Exploiting A Sub-Sampling Phase Detector A Noise-Shifting Differential Colpitts VCO  </description>
+    </item>
+    
+    <item>
+      <title>Simulation References</title>
+      <link>https://yrrapt.github.io/analogue/design/simulation/references/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yrrapt.github.io/analogue/design/simulation/references/</guid>
+      <description>Phase Noise  Efficient transient noise analysis of non-periodic mixed analogue/digital circuits  </description>
+    </item>
+    
+    <item>
+      <title>VCO Design</title>
+      <link>https://yrrapt.github.io/analogue/design/pll/vco-design/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yrrapt.github.io/analogue/design/pll/vco-design/</guid>
+      <description>\[ P = \frac{1}{2} \oint_S \mathbf{E} \times \mathbf{H}^* = \cdot d\mathbf{s} = P_l + 2 j \omega ~ (W_m - W_e) \]
+ [1] R. Aparicio and A. Hajimiri, &amp;quot;A noise-shifting differential Colpitts VCO,&amp;quot; in IEEE Journal of Solid-State Circuits, vol. 37, no. 12, pp. 1728-1736, Dec. 2002, doi: 10.1109/JSSC.2002.804354.</description>
     </item>
     
   </channel>

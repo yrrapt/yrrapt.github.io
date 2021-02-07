@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en-uk">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Common Source - Notes</title>
+<meta name="description" content="Thoughts and useful things to document">
+<meta name="generator" content="Hugo 0.80.0" />
+<link href="https://yrrapt.github.io/index.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="https://yrrapt.github.io/analogue/design/algorithmicdesign/common-source/common-source/">
+<link rel="stylesheet" href="https://yrrapt.github.io/css/theme.min.css">
+<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<link rel="stylesheet" href="https://yrrapt.github.io/css/chroma.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script src="https://yrrapt.github.io/js/bundle.js"></script><style>
+:root {}
+</style>
+<meta property="og:title" content="Common Source" />
+<meta property="og:description" content="Ideal Current Source To design the amplifier we will start with two design specifications: the DC gain and the gain-bandwidth product (GBW).
+These described as:
+$$ A_{DC} = g_m \cdot r_o$$
+$$ GBW = \frac{ g_m }{ 2 \pi C_L }$$
+Let&rsquo;s use an example spec:
+   Parameter Specification     $$ A_{DC} $$ 40 dB   $$ GBW $$ 1 MHz   $$ C_L $$ 10 pF    Let&rsquo;s rearrange using $$ \frac{g_m}{I_d} $$ as a parameter:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yrrapt.github.io/analogue/design/algorithmicdesign/common-source/common-source/" />
+<meta property="og:image" content="https://yrrapt.github.io/images/og-image.png"/>
+<meta property="og:site_name" content="Hugo Techdoc Theme" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yrrapt.github.io/images/og-image.png"/>
+
+<meta name="twitter:title" content="Common Source"/>
+<meta name="twitter:description" content="Ideal Current Source To design the amplifier we will start with two design specifications: the DC gain and the gain-bandwidth product (GBW).
+These described as:
+$$ A_{DC} = g_m \cdot r_o$$
+$$ GBW = \frac{ g_m }{ 2 \pi C_L }$$
+Let&rsquo;s use an example spec:
+   Parameter Specification     $$ A_{DC} $$ 40 dB   $$ GBW $$ 1 MHz   $$ C_L $$ 10 pF    Let&rsquo;s rearrange using $$ \frac{g_m}{I_d} $$ as a parameter:"/>
+<meta itemprop="name" content="Common Source">
+<meta itemprop="description" content="Ideal Current Source To design the amplifier we will start with two design specifications: the DC gain and the gain-bandwidth product (GBW).
+These described as:
+$$ A_{DC} = g_m \cdot r_o$$
+$$ GBW = \frac{ g_m }{ 2 \pi C_L }$$
+Let&rsquo;s use an example spec:
+   Parameter Specification     $$ A_{DC} $$ 40 dB   $$ GBW $$ 1 MHz   $$ C_L $$ 10 pF    Let&rsquo;s rearrange using $$ \frac{g_m}{I_d} $$ as a parameter:">
+
+<meta itemprop="wordCount" content="137">
+<meta itemprop="image" content="https://yrrapt.github.io/images/og-image.png"/>
+
+
+
+<meta itemprop="keywords" content="" />
+</head>
+<body><div class="container"><header>
+<h1>Notes</h1>
+<p class="description">Thoughts and useful things to document</p>
+
+</header>
+<div class="global-menu">
+<nav>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/tbd">To Be Defined</a></li></ul>
+</nav>
+</div>
+<div class="content-container">
+<main><h1>Common Source</h1>
+<h2 id="ideal-current-source">Ideal Current Source</h2>
+<p><img src="/Analogue/Design/AlgorithmicDesign/common-source/common_source_circuit_ideal.svg#center" alt="Common Source Amplifier with Ideal Current Source"></p>
+<p>To design the amplifier we will start with two design specifications: the DC gain and the gain-bandwidth product (GBW).</p>
+<p>These described as:</p>
+<p>$$ A_{DC} = g_m \cdot r_o$$</p>
+<p>$$ GBW = \frac{ g_m }{ 2 \pi C_L }$$</p>
+<p>Let&rsquo;s use an example spec:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:left">Specification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$$ A_{DC} $$</td>
+<td style="text-align:left">40 dB</td>
+</tr>
+<tr>
+<td style="text-align:left">$$ GBW $$</td>
+<td style="text-align:left">1 MHz</td>
+</tr>
+<tr>
+<td style="text-align:left">$$ C_L $$</td>
+<td style="text-align:left">10 pF</td>
+</tr>
+</tbody>
+</table>
+<p>Let&rsquo;s rearrange using $$ \frac{g_m}{I_d} $$ as a parameter:</p>
+<p>$$ g_m = GBW \cdot 2 \pi C_L $$
+$$ I_d = \frac{g_m}{ \left( \frac{g_m}{I_d} \right) } $$
+$$ I_d = \frac{GBW \cdot 2 \pi C_L}{ \left( \frac{g_m}{I_d} \right) } $$</p>
+<p>Let&rsquo;s select $$ \frac{g_m}{I_d} = 18 $$ this equates to an inversion coefficient of 1 [<a href="https://everynanocounts.com/2016/08/26/gmid-versus-ic/">Gm/ID versus IC</a>]</p>
+<p>Therefore:</p>
+<p>$$ I_d = \frac{ 10~MHz \cdot 2 \pi \cdot 10~pF }{18} = 35~\mu A $$</p>
+<div class="edit-meta">
+
+<br></div><nav class="pagination"><a class="nav nav-prev" href="https://yrrapt.github.io/analogue/design/algorithmicdesign/" title="Algorithmic Design"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Algorithmic Design</a>
+<a class="nav nav-next" href="https://yrrapt.github.io/analogue/design/control/references/" title="Control / Stability References">Next - Control / Stability References <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
+</footer>
+</main>
+<div class="sidebar">
+
+<nav class="slide-menu">
+<ul>
+<li class=""><a href="https://yrrapt.github.io">Home</a></li>
+
+<li class="parent has-sub-menu"><a href="https://yrrapt.github.io/analogue/">Analogue<span class="mark opened">-</span></a>
+  
+<ul class="sub-menu">
+
+<li class=" has-sub-menu"><a href="https://yrrapt.github.io/analogue/verification/">Verification<span class="mark closed">+</span></a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://yrrapt.github.io/analogue/verification/adc_verification/">ADC Verification Techniques</a></li>
+</ul>
+  
+</li>
+
+<li class="parent has-sub-menu"><a href="https://yrrapt.github.io/analogue/design/">Design<span class="mark opened">-</span></a>
+  
+<ul class="sub-menu">
+
+<li class=" has-sub-menu"><a href="https://yrrapt.github.io/analogue/design/inductor/">Inductors<span class="mark closed">+</span></a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://yrrapt.github.io/analogue/design/inductor/inductor-design/">Inductor Design</a></li>
+<li class=""><a href="https://yrrapt.github.io/analogue/design/inductor/references/">Inductor References</a></li>
+</ul>
+  
+</li>
+
+<li class="parent has-sub-menu"><a href="https://yrrapt.github.io/analogue/design/algorithmicdesign/">Algorithmic Design<span class="mark opened">-</span></a>
+  
+<ul class="sub-menu">
+<li class="active"><a href="https://yrrapt.github.io/analogue/design/algorithmicdesign/common-source/common-source/">Common Source</a></li>
+</ul>
+  
+</li>
+<li class=""><a href="https://yrrapt.github.io/analogue/design/control/references/">Control / Stability References</a></li>
+
+<li class=" has-sub-menu"><a href="https://yrrapt.github.io/analogue/design/pll/">PLL<span class="mark closed">+</span></a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://yrrapt.github.io/analogue/design/pll/phase-noise/">Jitter and Phase Noise Principles</a></li>
+<li class=""><a href="https://yrrapt.github.io/analogue/design/pll/references/">PLL References</a></li>
+<li class=""><a href="https://yrrapt.github.io/analogue/design/pll/vco-design/">VCO Design</a></li>
+</ul>
+  
+</li>
+<li class=""><a href="https://yrrapt.github.io/analogue/design/simulation/references/">Simulation References</a></li>
+</ul>
+  
+</li>
+</ul>
+  
+</li>
+</ul>
+</nav>
+
+
+
+<div class="sidebar-footer"></div>
+</div>
+
+</div><script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+<script src="https://tikzjax.com/v1/tikzjax.js"></script></div>
+</body>
+</html>
