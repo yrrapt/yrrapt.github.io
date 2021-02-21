@@ -1,0 +1,8 @@
+\documentclass[tikz, border=1mm]{standalone}
+\begin{document}
+  \begin{tikzpicture}
+    \draw[thick,->] (0,0) -- (6,0) node[anchor=north west] {$\mathnormal{f}$};
+    \draw[thick,->] (0,0) -- (0,6) node[anchor=south east] {$\mathcal{L}(\mathrm{\Delta} f)$};
+    \draw (0,5) .. controls (1,5) and (0,0) .. (3,0);
+  \end{tikzpicture}
+\end{document}

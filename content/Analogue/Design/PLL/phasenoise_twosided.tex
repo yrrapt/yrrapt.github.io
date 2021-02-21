@@ -1,0 +1,11 @@
+\documentclass[tikz, border=1mm]{standalone}
+\begin{document}
+  \begin{tikzpicture}
+    \draw[thick,->] (-6,0) -- (6,0) node[anchor=north west] {$f$};
+    \draw[thick,->] (-6,0) -- (-6,6) node[anchor=south east] {$ S_{~v} (f)$};
+    \draw[->] (0,0) -- (0,5.5) node[anchor=north west] {no jitter};
+    \node[] at (0,-0.5) {$1/T_{0}$};
+    \draw (0,5) .. controls (1,5) and (0,0) .. (3,0);
+    \draw (0,5) .. controls (-1,5) and (0,0) .. (-3,0);
+  \end{tikzpicture}
+\end{document}
