@@ -3,7 +3,7 @@
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>VCO Design - Notes</title>
+<title>LC VCO Design - Notes</title>
 <meta name="description" content="Thoughts and useful things to document">
 <meta name="generator" content="Hugo 0.80.0" />
 <link href="https://yrrapt.github.io/index.xml" rel="alternate" type="application/rss+xml">
@@ -17,9 +17,11 @@
 <script src="https://yrrapt.github.io/js/bundle.js"></script><style>
 :root {}
 </style>
-<meta property="og:title" content="VCO Design" />
-<meta property="og:description" content="\[ P = \frac{1}{2} \oint_S \mathbf{E} \times \mathbf{H}^* = \cdot d\mathbf{s} = P_l &#43; 2 j \omega ~ (W_m - W_e) \]
- [1] R. Aparicio and A. Hajimiri, &quot;A noise-shifting differential Colpitts VCO,&quot; in IEEE Journal of Solid-State Circuits, vol. 37, no. 12, pp. 1728-1736, Dec. 2002, doi: 10.1109/JSSC.2002.804354." />
+<meta property="og:title" content="LC VCO Design" />
+<meta property="og:description" content="The impedance for a parallel RLC for \( \Delta \omega is:
+\[ Z(\omega_0 &#43; \Delta \omega) \approx \frac{1}{G_L} \cdot \frac{1}{1 &#43; j 2 Q_L \frac{\Delta \omega}{\omega_0} } \]
+where \( G_L \) is the parallel parasitic conductance of the tank. For steady-state oscillation \( G_m R_L = \frac{G_m}{G_L} = 1 \).
+In an oscillator the active device provides energy to compensate for losses in the tank circuit and sustain oscillation. It supplies DC energy to the tank but also injects noise which becomes phase noise." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yrrapt.github.io/analogue/design/pll/vco-design/" />
 <meta property="og:image" content="https://yrrapt.github.io/images/og-image.png"/>
@@ -27,14 +29,18 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://yrrapt.github.io/images/og-image.png"/>
 
-<meta name="twitter:title" content="VCO Design"/>
-<meta name="twitter:description" content="\[ P = \frac{1}{2} \oint_S \mathbf{E} \times \mathbf{H}^* = \cdot d\mathbf{s} = P_l &#43; 2 j \omega ~ (W_m - W_e) \]
- [1] R. Aparicio and A. Hajimiri, &quot;A noise-shifting differential Colpitts VCO,&quot; in IEEE Journal of Solid-State Circuits, vol. 37, no. 12, pp. 1728-1736, Dec. 2002, doi: 10.1109/JSSC.2002.804354."/>
-<meta itemprop="name" content="VCO Design">
-<meta itemprop="description" content="\[ P = \frac{1}{2} \oint_S \mathbf{E} \times \mathbf{H}^* = \cdot d\mathbf{s} = P_l &#43; 2 j \omega ~ (W_m - W_e) \]
- [1] R. Aparicio and A. Hajimiri, &quot;A noise-shifting differential Colpitts VCO,&quot; in IEEE Journal of Solid-State Circuits, vol. 37, no. 12, pp. 1728-1736, Dec. 2002, doi: 10.1109/JSSC.2002.804354.">
+<meta name="twitter:title" content="LC VCO Design"/>
+<meta name="twitter:description" content="The impedance for a parallel RLC for \( \Delta \omega is:
+\[ Z(\omega_0 &#43; \Delta \omega) \approx \frac{1}{G_L} \cdot \frac{1}{1 &#43; j 2 Q_L \frac{\Delta \omega}{\omega_0} } \]
+where \( G_L \) is the parallel parasitic conductance of the tank. For steady-state oscillation \( G_m R_L = \frac{G_m}{G_L} = 1 \).
+In an oscillator the active device provides energy to compensate for losses in the tank circuit and sustain oscillation. It supplies DC energy to the tank but also injects noise which becomes phase noise."/>
+<meta itemprop="name" content="LC VCO Design">
+<meta itemprop="description" content="The impedance for a parallel RLC for \( \Delta \omega is:
+\[ Z(\omega_0 &#43; \Delta \omega) \approx \frac{1}{G_L} \cdot \frac{1}{1 &#43; j 2 Q_L \frac{\Delta \omega}{\omega_0} } \]
+where \( G_L \) is the parallel parasitic conductance of the tank. For steady-state oscillation \( G_m R_L = \frac{G_m}{G_L} = 1 \).
+In an oscillator the active device provides energy to compensate for losses in the tank circuit and sustain oscillation. It supplies DC energy to the tank but also injects noise which becomes phase noise.">
 
-<meta itemprop="wordCount" content="49">
+<meta itemprop="wordCount" content="148">
 <meta itemprop="image" content="https://yrrapt.github.io/images/og-image.png"/>
 
 
@@ -54,16 +60,29 @@
 </nav>
 </div>
 <div class="content-container">
-<main><h1>VCO Design</h1>
-<p><span  class="math">\[ P = \frac{1}{2} \oint_S \mathbf{E} \times \mathbf{H}^* = \cdot d\mathbf{s} = P_l + 2 j \omega ~ (W_m - W_e) \]</span></p>
+<main><h1>LC VCO Design</h1>
+<p>The impedance for a parallel RLC for <span  class="math">\( \Delta \omega << \omega_0 \)</span> is:</p>
+
+<p><span  class="math">\[ Z(\omega_0 + \Delta \omega) \approx \frac{1}{G_L} \cdot \frac{1}{1 + j 2 Q_L \frac{\Delta \omega}{\omega_0} } \]</span></p>
+
+<p>where <span  class="math">\( G_L \)</span> is the parallel parasitic conductance of the tank. For steady-state oscillation <span  class="math">\( G_m R_L = \frac{G_m}{G_L} = 1 \)</span>.</p>
+
+<p>In an oscillator the active device provides energy to compensate for losses in the tank circuit and sustain oscillation. It supplies DC energy to the tank but also injects noise which becomes phase noise.</p>
+
+<h2 id="differential-colpitts">Differential Colpitts</h2>
+
+<p><figure><img src="../diff_colpitts.png" alt="Differential Colpitts"></figure>
+<em>Differential Colpitts[2]</em></p>
 
 <hr>
 
-<p>[1] R. Aparicio and A. Hajimiri, &quot;A noise-shifting differential Colpitts VCO,&quot; in <em>IEEE Journal of Solid-State Circuits</em>, vol. 37, no. 12, pp. 1728-1736, Dec. 2002, doi: 10.1109/JSSC.2002.804354.</p>
+<p>[1] A. Hajimiri and T. H. Lee, &quot;A general theory of phase noise in electrical oscillators,&quot; in <em>IEEE Journal of Solid-State Circuits</em>, vol. 33, no. 2, pp. 179-194, Feb. 1998, doi: 10.1109/4.658619.</p>
+
+<p>[2] R. Aparicio and A. Hajimiri, &quot;A noise-shifting differential Colpitts VCO&quot; in <em>IEEE Journal of Solid-State Circuits</em>, vol. 37, no. 12, pp. 1728-1736, Dec. 2002, doi: 10.1109/JSSC.2002.804354.</p>
 <div class="edit-meta">
 
-<br></div><nav class="pagination"><a class="nav nav-prev" href="https://yrrapt.github.io/analogue/design/pll/references/" title="PLL References"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - PLL References</a>
-<a class="nav nav-next" href="https://yrrapt.github.io/analogue/design/simulation/references/" title="Simulation References">Next - Simulation References <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<br></div><nav class="pagination"><a class="nav nav-prev" href="https://yrrapt.github.io/analogue/design/pll/phase-noise/" title="Jitter and Phase Noise Principles"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Jitter and Phase Noise Principles</a>
+<a class="nav nav-next" href="https://yrrapt.github.io/analogue/design/pll/references/" title="PLL References">Next - PLL References <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
 </footer>
 </main>
@@ -93,6 +112,7 @@
   
 <ul class="sub-menu">
 <li class=""><a href="https://yrrapt.github.io/analogue/design/inductor/inductor-design/">Inductor Design</a></li>
+<li class=""><a href="https://yrrapt.github.io/analogue/design/inductor/tank-design/">Tank Design</a></li>
 <li class=""><a href="https://yrrapt.github.io/analogue/design/inductor/references/">Inductor References</a></li>
 </ul>
   
@@ -111,8 +131,9 @@
   
 <ul class="sub-menu">
 <li class=""><a href="https://yrrapt.github.io/analogue/design/pll/phase-noise/">Jitter and Phase Noise Principles</a></li>
+<li class="active"><a href="https://yrrapt.github.io/analogue/design/pll/vco-design/">LC VCO Design</a></li>
 <li class=""><a href="https://yrrapt.github.io/analogue/design/pll/references/">PLL References</a></li>
-<li class="active"><a href="https://yrrapt.github.io/analogue/design/pll/vco-design/">VCO Design</a></li>
+<li class=""><a href="https://yrrapt.github.io/analogue/design/pll/pll-system/">PLL Systems</a></li>
 </ul>
   
 </li>

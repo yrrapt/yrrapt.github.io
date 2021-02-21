@@ -28,6 +28,11 @@
   </url>
   
   <url>
+    <loc>https://yrrapt.github.io/analogue/design/inductor/tank-design/</loc>
+    <lastmod>2020-12-20T15:02:03+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yrrapt.github.io/analogue/verification/</loc>
     <lastmod>2020-12-20T15:02:03+01:00</lastmod>
   </url>
@@ -62,6 +67,10 @@
   </url>
   
   <url>
+    <loc>https://yrrapt.github.io/analogue/design/pll/vco-design/</loc>
+  </url>
+  
+  <url>
     <loc>https://yrrapt.github.io/analogue/design/pll/</loc>
   </url>
   
@@ -70,15 +79,15 @@
   </url>
   
   <url>
+    <loc>https://yrrapt.github.io/analogue/design/pll/pll-system/</loc>
+  </url>
+  
+  <url>
     <loc>https://yrrapt.github.io/analogue/design/simulation/references/</loc>
   </url>
   
   <url>
     <loc>https://yrrapt.github.io/tags/</loc>
-  </url>
-  
-  <url>
-    <loc>https://yrrapt.github.io/analogue/design/pll/vco-design/</loc>
   </url>
   
 </urlset>

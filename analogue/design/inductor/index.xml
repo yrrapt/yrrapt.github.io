@@ -13,7 +13,25 @@
       <pubDate>Sun, 20 Dec 2020 15:02:03 +0100</pubDate>
       
       <guid>https://yrrapt.github.io/analogue/design/inductor/inductor-design/</guid>
-      <description>\[ P = \frac{1}{2} \oint_S \mathbf{E} \times \mathbf{H}^* = \cdot d\mathbf{s} = P_l + 2 j \omega ~ (W_m - W_e) \]</description>
+      <description>Electromagnetics \[ P = \frac{1}{2} \oint_S \mathbf{E} \times \mathbf{H}^* = \cdot d\mathbf{s} = P_l + 2 j \omega ~ (W_m - W_e) \]
+Lumped Model Design 
+Inductance \[ L_S = \beta ~ d^{\alpha_1}_{out} ~ w^{\alpha_2} ~ d^{\alpha_3}_{avg} ~ n^{\alpha_4} ~ s^{\alpha_5} ~~~ [nH]\]
+Series Resistance \[ R_s = l / ( \sigma ~ w ~ \delta ~ (1 - e^{-t/\delta})) = k_1 ~ l/w \]
+\[ \delta = \sqrt{ 2 / (w ~ \mu ~ \sigma) } \]</description>
+    </item>
+    
+    <item>
+      <title>Tank Design</title>
+      <link>https://yrrapt.github.io/analogue/design/inductor/tank-design/</link>
+      <pubDate>Sun, 20 Dec 2020 15:02:03 +0100</pubDate>
+      
+      <guid>https://yrrapt.github.io/analogue/design/inductor/tank-design/</guid>
+      <description>Tank Inductance \[ L_{tank} = \left[ 1 + {(R_s / (L_s \omega))}^2 \right] L_s \]
+Tank Capacitance \[ C_{tank} = C_{ad} + C_{tot} = C_{load} + C_{tot} \]
+Tank Resistance \[ R_{tank} = R_p \parallel R_{s,p} = {(1/R_p + 1/R_{s,p} )}^{-1} \]
+For \( Q_{tank}  1.5 \):
+\[ R_{s,p} = \left[ (1 + {(L_s \omega / R_s)}^2 \right] R_s \approx {(L_s \omega)}^2 / R_s \]
+Geometric Program \[ maximise ~~~~ R_{tank} \]</description>
     </item>
     
     <item>
@@ -22,7 +40,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://yrrapt.github.io/analogue/design/inductor/references/</guid>
-      <description> On-Chip Spiral Inductors for RF Applications: An Overview A Fundamental Approach for Design and Optimization of a Spiral Inductor  </description>
+      <description> On-Chip Spiral Inductors for RF Applications: An Overview A Fundamental Approach for Design and Optimization of a Spiral Inductor Concepts and Methods in Optimization of Integrated LC VCOs Simple Accurate Expressions for Planar Spiral Inductances Optimization of Inductor Circuits via Geometric Programming  </description>
     </item>
     
   </channel>

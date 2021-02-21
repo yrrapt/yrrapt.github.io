@@ -43,7 +43,7 @@ Given the assumption that the amplitude of the signal is much greater than the n
 \[ v(t) \approx A \omega_0 t &#43; n(t) \]
 Find when the signal equals zero at time moment k.">
 
-<meta itemprop="wordCount" content="523">
+<meta itemprop="wordCount" content="454">
 <meta itemprop="image" content="https://yrrapt.github.io/images/og-image.png"/>
 
 
@@ -108,30 +108,15 @@ Find when the signal equals zero at time moment k.">
 
 <p>Below an ideal oscillator is shown with a single frequency component. A realistic representation is also shown jitter with power around the ideal single tone. The greater the jitter the more the power will be spread around the ideal frequency. The power in the tails is also proportional to the squared amplitude of the oscillating waveform. To obtain a measure of jitter <span  class="math">\( S_v (f) \)</span> may be normalised with respect to the total power in the signal. for a sinusoid this is <span  class="math">\( A^2/2 \)</span>.</p>
 
-<script type="text/tikz">
-  \begin{tikzpicture}
-    \draw[thick,->] (-6,0) -- (6,0) node[anchor=north west] {$f$};
-    \draw[thick,->] (-6,0) -- (-6,6) node[anchor=south east] {$ S_{~v} ~~(f)$};
-    \draw[->] (0,0) -- (0,5.5) node[anchor=north west] {no~~~~jitter};
-    \node[] at (0,-0.5) {$1/T_{~~0}$};
-    \draw (0,5) .. controls (1,5) and (0,0) .. (3,0);
-    \draw (0,5) .. controls (-1,5) and (0,0) .. (-3,0);
-  \end{tikzpicture}
-</script>
+<p><figure><img src="../phasenoise_twosided.svg" alt="Two Sided Phase Noise"></figure></p>
 
 <p>The normalised power can also be shifted to DC giving the alternative representation of jitter:</p>
 
 <p><span  class="math">\[ \mathcal{L} \Delta = \frac{S_v \left( \frac{1}{T_0} + \Delta f \right) }{A^2 / 2} \]</span></p>
 
-<script type="text/tikz">
-  \begin{tikzpicture}[]
-    \draw[thick,->] (0,0) -- (6,0) node[anchor=north west] {$\mathnormal{f}$};
-    \draw[thick,->] (0,0) -- (0,6) node[anchor=south east] {$\mathcal{L}(\mathrm{\Delta} f)$};
-    \draw (0,5) .. controls (1,5) and (0,0) .. (3,0);
-  \end{tikzpicture}
-</script>
+<p><figure><img src="../phasenoise_onesided.svg" alt="One Sided Phase Noise"></figure></p>
 
-<p>The units of <span  class="math">\( \mathcal{L} \Delta \)</span> are <span  class="math">\( Hz^{-1} \)</span> but it is common to plot it's logartihm <span  class="math">\( 10 log_{10} \left( \mathcal{L} \Delta \right) \)</span></p>
+<p>The units of <span  class="math">\( \mathcal{L} \Delta \)</span> are <span  class="math">\( Hz^{-1} \)</span> but it is common to plot it's logartihm <span  class="math">\( 10 log_{10} \left( \mathcal{L} \Delta \right) \)</span> in units of dBc/Hz.</p>
 
 <hr>
 
@@ -139,7 +124,7 @@ Find when the signal equals zero at time moment k.">
 <div class="edit-meta">
 
 <br></div><nav class="pagination"><a class="nav nav-prev" href="https://yrrapt.github.io/analogue/design/pll/" title="PLL"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - PLL</a>
-<a class="nav nav-next" href="https://yrrapt.github.io/analogue/design/pll/references/" title="PLL References">Next - PLL References <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<a class="nav nav-next" href="https://yrrapt.github.io/analogue/design/pll/vco-design/" title="LC VCO Design">Next - LC VCO Design <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
 </footer>
 </main>
@@ -169,6 +154,7 @@ Find when the signal equals zero at time moment k.">
   
 <ul class="sub-menu">
 <li class=""><a href="https://yrrapt.github.io/analogue/design/inductor/inductor-design/">Inductor Design</a></li>
+<li class=""><a href="https://yrrapt.github.io/analogue/design/inductor/tank-design/">Tank Design</a></li>
 <li class=""><a href="https://yrrapt.github.io/analogue/design/inductor/references/">Inductor References</a></li>
 </ul>
   
@@ -187,8 +173,9 @@ Find when the signal equals zero at time moment k.">
   
 <ul class="sub-menu">
 <li class="active"><a href="https://yrrapt.github.io/analogue/design/pll/phase-noise/">Jitter and Phase Noise Principles</a></li>
+<li class=""><a href="https://yrrapt.github.io/analogue/design/pll/vco-design/">LC VCO Design</a></li>
 <li class=""><a href="https://yrrapt.github.io/analogue/design/pll/references/">PLL References</a></li>
-<li class=""><a href="https://yrrapt.github.io/analogue/design/pll/vco-design/">VCO Design</a></li>
+<li class=""><a href="https://yrrapt.github.io/analogue/design/pll/pll-system/">PLL Systems</a></li>
 </ul>
   
 </li>

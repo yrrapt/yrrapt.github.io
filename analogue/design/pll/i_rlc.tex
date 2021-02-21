@@ -1,0 +1,27 @@
+\documentclass{standalone}
+\usepackage[arrowmos,betterproportions]{circuitikz}
+\begin{document}
+\begin{circuitikz}[american currents,american voltages]
+	\tikzstyle{every circle node}=   [draw,double]
+	\draw
+
+	% place the transistors
+	
+	(0,-1) node[nmos] (M1) {} node[anchor=west]{$M_1$}
+
+	% make connections from current source to transistor
+	(0,2) to[isource, l=$I_{D}$](0,0) to (M1.D)	
+
+	;\draw
+	(0,2) |- (0,2.5)node[]{} |- (-1, 2.5){} node[ocirc] {}  node[anchor=east]{$VDD$}
+	(M1.S) |- (-1, -2.5){} node[ocirc] {}  node[anchor=east]{$GND$}
+
+	(0, 0){} node[circ] {} to (2, 0){} node[ocirc] {}  node[anchor=west]{$OUT$}
+	(M1.G) to (-1, -1){} node[ocirc] {}  node[anchor=east]{$IN$}
+	
+	;\draw [densely dashed]
+	(2, 0) node[]{} -- (2, 0) to [C, l=$C_l$](2,-2) to (2,-2) node[ground, xscale=0.75, yscale=0.75]{}
+	
+
+;\end{circuitikz}
+\end{document}

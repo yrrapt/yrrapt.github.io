@@ -20,22 +20,40 @@ Find when the signal equals zero at time moment k.</description>
     </item>
     
     <item>
+      <title>LC VCO Design</title>
+      <link>https://yrrapt.github.io/analogue/design/pll/vco-design/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yrrapt.github.io/analogue/design/pll/vco-design/</guid>
+      <description>The impedance for a parallel RLC for \( \Delta \omega is:
+\[ Z(\omega_0 + \Delta \omega) \approx \frac{1}{G_L} \cdot \frac{1}{1 + j 2 Q_L \frac{\Delta \omega}{\omega_0} } \]
+where \( G_L \) is the parallel parasitic conductance of the tank. For steady-state oscillation \( G_m R_L = \frac{G_m}{G_L} = 1 \).
+In an oscillator the active device provides energy to compensate for losses in the tank circuit and sustain oscillation. It supplies DC energy to the tank but also injects noise which becomes phase noise.</description>
+    </item>
+    
+    <item>
       <title>PLL References</title>
       <link>https://yrrapt.github.io/analogue/design/pll/references/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://yrrapt.github.io/analogue/design/pll/references/</guid>
-      <description> Spur Reduction Techniques for Phase-Locked Loops Exploiting A Sub-Sampling Phase Detector A Noise-Shifting Differential Colpitts VCO  </description>
+      <description> Spur Reduction Techniques for Phase-Locked Loops Exploiting A Sub-Sampling Phase Detector A Noise-Shifting Differential Colpitts VCO Spur Reduction Techniques for Phase-Locked Loops Exploiting A Sub-Sampling Phase Detector A General Theory of Phase Noise in Electrical Oscillators  </description>
     </item>
     
     <item>
-      <title>VCO Design</title>
-      <link>https://yrrapt.github.io/analogue/design/pll/vco-design/</link>
+      <title>PLL Systems</title>
+      <link>https://yrrapt.github.io/analogue/design/pll/pll-system/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yrrapt.github.io/analogue/design/pll/vco-design/</guid>
-      <description>\[ P = \frac{1}{2} \oint_S \mathbf{E} \times \mathbf{H}^* = \cdot d\mathbf{s} = P_l + 2 j \omega ~ (W_m - W_e) \]
- [1] R. Aparicio and A. Hajimiri, &amp;quot;A noise-shifting differential Colpitts VCO,&amp;quot; in IEEE Journal of Solid-State Circuits, vol. 37, no. 12, pp. 1728-1736, Dec. 2002, doi: 10.1109/JSSC.2002.804354.</description>
+      <guid>https://yrrapt.github.io/analogue/design/pll/pll-system/</guid>
+      <description>Transfer Functions  [1]
+Considering the system above, the transfer functions of the loop are:
+Open Loop Transfer Function:
+\[ G(s) = \frac{ \theta_o (s) }{ \theta_o (e) } = \frac{K_d ~ K_o ~ F(s)}{s} \]
+System Transfer Function:
+\[ H(s) = \frac{ \theta_o (s) }{ \theta_i (e) } = \frac{G(s)}{1 + G(s)} = \frac{K_d ~ K_o ~ F(s)}{s + K_d ~ K_o ~ F(s)} \]
+Error Transfer Function:
+\[ E(s) = \frac{ \theta_e (s) }{ \theta_i (e) } = \frac{1}{1 + G(s)} = 1 - H(s) = \frac{s}{s + K_d ~ K_o ~ F(s)} \]</description>
     </item>
     
   </channel>

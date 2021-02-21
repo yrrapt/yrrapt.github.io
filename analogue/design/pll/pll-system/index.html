@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en-uk">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>PLL Systems - Notes</title>
+<meta name="description" content="Thoughts and useful things to document">
+<meta name="generator" content="Hugo 0.80.0" />
+<link href="https://yrrapt.github.io/index.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="https://yrrapt.github.io/analogue/design/pll/pll-system/">
+<link rel="stylesheet" href="https://yrrapt.github.io/css/theme.min.css">
+<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<link rel="stylesheet" href="https://yrrapt.github.io/css/chroma.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script src="https://yrrapt.github.io/js/bundle.js"></script><style>
+:root {}
+</style>
+<meta property="og:title" content="PLL Systems" />
+<meta property="og:description" content="Transfer Functions  [1]
+Considering the system above, the transfer functions of the loop are:
+Open Loop Transfer Function:
+\[ G(s) = \frac{ \theta_o (s) }{ \theta_o (e) } = \frac{K_d ~ K_o ~ F(s)}{s} \]
+System Transfer Function:
+\[ H(s) = \frac{ \theta_o (s) }{ \theta_i (e) } = \frac{G(s)}{1 &#43; G(s)} = \frac{K_d ~ K_o ~ F(s)}{s &#43; K_d ~ K_o ~ F(s)} \]
+Error Transfer Function:
+\[ E(s) = \frac{ \theta_e (s) }{ \theta_i (e) } = \frac{1}{1 &#43; G(s)} = 1 - H(s) = \frac{s}{s &#43; K_d ~ K_o ~ F(s)} \]" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yrrapt.github.io/analogue/design/pll/pll-system/" />
+<meta property="og:image" content="https://yrrapt.github.io/images/og-image.png"/>
+<meta property="og:site_name" content="Hugo Techdoc Theme" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yrrapt.github.io/images/og-image.png"/>
+
+<meta name="twitter:title" content="PLL Systems"/>
+<meta name="twitter:description" content="Transfer Functions  [1]
+Considering the system above, the transfer functions of the loop are:
+Open Loop Transfer Function:
+\[ G(s) = \frac{ \theta_o (s) }{ \theta_o (e) } = \frac{K_d ~ K_o ~ F(s)}{s} \]
+System Transfer Function:
+\[ H(s) = \frac{ \theta_o (s) }{ \theta_i (e) } = \frac{G(s)}{1 &#43; G(s)} = \frac{K_d ~ K_o ~ F(s)}{s &#43; K_d ~ K_o ~ F(s)} \]
+Error Transfer Function:
+\[ E(s) = \frac{ \theta_e (s) }{ \theta_i (e) } = \frac{1}{1 &#43; G(s)} = 1 - H(s) = \frac{s}{s &#43; K_d ~ K_o ~ F(s)} \]"/>
+<meta itemprop="name" content="PLL Systems">
+<meta itemprop="description" content="Transfer Functions  [1]
+Considering the system above, the transfer functions of the loop are:
+Open Loop Transfer Function:
+\[ G(s) = \frac{ \theta_o (s) }{ \theta_o (e) } = \frac{K_d ~ K_o ~ F(s)}{s} \]
+System Transfer Function:
+\[ H(s) = \frac{ \theta_o (s) }{ \theta_i (e) } = \frac{G(s)}{1 &#43; G(s)} = \frac{K_d ~ K_o ~ F(s)}{s &#43; K_d ~ K_o ~ F(s)} \]
+Error Transfer Function:
+\[ E(s) = \frac{ \theta_e (s) }{ \theta_i (e) } = \frac{1}{1 &#43; G(s)} = 1 - H(s) = \frac{s}{s &#43; K_d ~ K_o ~ F(s)} \]">
+
+<meta itemprop="wordCount" content="511">
+<meta itemprop="image" content="https://yrrapt.github.io/images/og-image.png"/>
+
+
+
+<meta itemprop="keywords" content="" />
+</head>
+<body><div class="container"><header>
+<h1>Notes</h1>
+<p class="description">Thoughts and useful things to document</p>
+
+</header>
+<div class="global-menu">
+<nav>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/tbd">To Be Defined</a></li></ul>
+</nav>
+</div>
+<div class="content-container">
+<main><h1>PLL Systems</h1>
+<h2 id="transfer-functions">Transfer Functions</h2>
+
+<p><figure><img src="../pll_system_basic.png" alt="Basic PLL System"></figure>
+<em>[1]</em></p>
+
+<p>Considering the system above, the transfer functions of the loop are:</p>
+
+<p><strong>Open Loop Transfer Function</strong>:</p>
+
+<p><span  class="math">\[ G(s) = \frac{ \theta_o (s) }{ \theta_o (e) } = \frac{K_d ~ K_o ~ F(s)}{s} \]</span></p>
+
+<p><strong>System Transfer Function</strong>:</p>
+
+<p><span  class="math">\[ H(s) = \frac{ \theta_o (s) }{ \theta_i (e) } = \frac{G(s)}{1 + G(s)} = \frac{K_d ~ K_o ~ F(s)}{s + K_d ~ K_o ~ F(s)} \]</span></p>
+
+<p><strong>Error Transfer Function</strong>:</p>
+
+<p><span  class="math">\[ E(s) = \frac{ \theta_e (s) }{ \theta_i (e) } = \frac{1}{1 + G(s)} = 1 - H(s) = \frac{s}{s + K_d ~ K_o ~ F(s)} \]</span></p>
+
+<h2 id="loop-filter">Loop Filter</h2>
+
+<p>Consider an idealied first order loop filter with equations:</p>
+
+<p><span  class="math">\[ \tau_1 = R_1 C \]</span></p>
+
+<p><span  class="math">\[ \tau_2 = R_2 C \]</span></p>
+
+<p><span  class="math">\[ F(s) \approx -\frac{s \tau_2 + 1}{s \tau_1} = - \left( \frac{\tau_2}{\tau_1} + \frac{1}{s \tau_1} \right)\]</span></p>
+
+<p>This can also be represented as PI (Proportional Integral) gains:</p>
+
+<p><span  class="math">\[ F(s)  = K_1 + \frac{K_2}{s} \]</span></p>
+
+<h2 id="second-order-pll">Second Order PLL</h2>
+
+<p>Once the loop filter (or better named loop controller) above is combined with the system transfer function the system becomes second order:</p>
+
+<p><span  class="math">\[ H(s) = \frac{ K_d~K_o (s \tau_2 + 1) / \tau_1 }{ s^2 + s~K_d~K_o~\tau_2/\tau_1 + K_d~K_o/\tau_1 } = \frac{K_d~K_o (K_1 s + K_2)}{s^2  + s~K_d~K_o~K_1 + K_d~K_o~K_2} \]</span></p>
+
+<p>The two roots of the denomintor for the poles of the transfer function. The zero is the root of the numerator and lies at <span  class="math">\( s = -1 / \tau_2 = -K_2/K_1 \)</span>.</p>
+
+<p>More important than the order of the PLL is the type. The type is the number of poles at zero, this is the number of integrators in the system. Most PLLs are type 2.</p>
+
+<h4 id="natural-frequency-and-damping">Natural Frequency and Damping</h4>
+
+<p>The second-order system can be described using the <em>undamped natural frequency</em> <span  class="math">\( \omega_n \)</span> and the damping ratio, <span  class="math">\( \zeta \)</span>. These are defined as:</p>
+
+<p><span  class="math">\[ \omega_n = \sqrt{\frac{K_d K_o}{\tau_1}} = \sqrt{K_d K_o K_2} \]</span></p>
+
+<p><span  class="math">\[ \zeta  = \frac{\tau_2}{2} \sqrt{\frac{K_d K_o}{\tau_1}} = \frac{\tau_2 \omega_2}{2} = \frac{K_1}{2} \sqrt{\frac{K_d K_o}{K_2}} \]</span></p>
+
+<p>Note that the natural frequency is a function of the oscillator and detector gain and also the integral gain but not the proportional gain.</p>
+
+<p>A higher ration of proportional gain to integral gain will increase the damping ratio.</p>
+
+<p>Which allows the system transfer function to be represented as:</p>
+
+<p><span  class="math">\[ H(s) = \frac{ 2 \zeta \omega_n s + \omega_n^2 }{ s^2  + 2 \zeta \omega_n s + \omega_n^2 } \]</span></p>
+
+<h4 id="loop-gain">Loop Gain</h4>
+
+<p>For a second-order type 2 PLL the loop gain is:</p>
+
+<p><span  class="math">\[ K = K_d K_o K_1 = \frac{K_d K_o \tau_2}{\tau_1} \]</span></p>
+
+<p>Which is also the open-loop gain through the proportional path.</p>
+
+<h4 id="bandwidth">Bandwidth</h4>
+
+<p>The natural frequency, <span  class="math">\( \omega_n \)</span>, is a bad description of the bandwidth of a PLL due to the effect the damping factor has on the frequency response. A better measure of bandwidth is the loop gain, <span  class="math">\( K \)</span>. Natural frequency also has no meaning for non-second-order systems whereas K is still a good measure of bandwidth in these systems.</p>
+
+<p>The natural frequency is a good predictor of the error response corner frequency though.</p>
+
+<hr>
+
+<p>[1] Floyd M. Gardner, &quot;Phaselock Techniques, 3rd Edition&quot;</p>
+<div class="edit-meta">
+
+<br></div><nav class="pagination"><a class="nav nav-prev" href="https://yrrapt.github.io/analogue/design/pll/references/" title="PLL References"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - PLL References</a>
+<a class="nav nav-next" href="https://yrrapt.github.io/analogue/design/simulation/references/" title="Simulation References">Next - Simulation References <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
+</footer>
+</main>
+<div class="sidebar">
+
+<nav class="slide-menu">
+<ul>
+<li class=""><a href="https://yrrapt.github.io">Home</a></li>
+
+<li class="parent has-sub-menu"><a href="https://yrrapt.github.io/analogue/">Analogue<span class="mark opened">-</span></a>
+  
+<ul class="sub-menu">
+
+<li class=" has-sub-menu"><a href="https://yrrapt.github.io/analogue/verification/">Verification<span class="mark closed">+</span></a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://yrrapt.github.io/analogue/verification/adc_verification/">ADC Verification Techniques</a></li>
+</ul>
+  
+</li>
+
+<li class="parent has-sub-menu"><a href="https://yrrapt.github.io/analogue/design/">Design<span class="mark opened">-</span></a>
+  
+<ul class="sub-menu">
+
+<li class=" has-sub-menu"><a href="https://yrrapt.github.io/analogue/design/inductor/">Inductors<span class="mark closed">+</span></a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://yrrapt.github.io/analogue/design/inductor/inductor-design/">Inductor Design</a></li>
+<li class=""><a href="https://yrrapt.github.io/analogue/design/inductor/tank-design/">Tank Design</a></li>
+<li class=""><a href="https://yrrapt.github.io/analogue/design/inductor/references/">Inductor References</a></li>
+</ul>
+  
+</li>
+
+<li class=" has-sub-menu"><a href="https://yrrapt.github.io/analogue/design/algorithmicdesign/">Algorithmic Design<span class="mark closed">+</span></a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://yrrapt.github.io/analogue/design/algorithmicdesign/common-source/common-source/">Common Source</a></li>
+</ul>
+  
+</li>
+<li class=""><a href="https://yrrapt.github.io/analogue/design/control/references/">Control / Stability References</a></li>
+
+<li class="parent has-sub-menu"><a href="https://yrrapt.github.io/analogue/design/pll/">PLL<span class="mark opened">-</span></a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://yrrapt.github.io/analogue/design/pll/phase-noise/">Jitter and Phase Noise Principles</a></li>
+<li class=""><a href="https://yrrapt.github.io/analogue/design/pll/vco-design/">LC VCO Design</a></li>
+<li class=""><a href="https://yrrapt.github.io/analogue/design/pll/references/">PLL References</a></li>
+<li class="active"><a href="https://yrrapt.github.io/analogue/design/pll/pll-system/">PLL Systems</a></li>
+</ul>
+  
+</li>
+<li class=""><a href="https://yrrapt.github.io/analogue/design/simulation/references/">Simulation References</a></li>
+</ul>
+  
+</li>
+</ul>
+  
+</li>
+</ul>
+</nav>
+
+
+
+<div class="sidebar-footer"></div>
+</div>
+
+</div><script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+<script src="https://tikzjax.com/v1/tikzjax.js" crossorigin="anonymous"></script></div>
+</body>
+</html>

@@ -18,7 +18,11 @@
 :root {}
 </style>
 <meta property="og:title" content="Inductor Design" />
-<meta property="og:description" content="\[ P = \frac{1}{2} \oint_S \mathbf{E} \times \mathbf{H}^* = \cdot d\mathbf{s} = P_l &#43; 2 j \omega ~ (W_m - W_e) \]" />
+<meta property="og:description" content="Electromagnetics \[ P = \frac{1}{2} \oint_S \mathbf{E} \times \mathbf{H}^* = \cdot d\mathbf{s} = P_l &#43; 2 j \omega ~ (W_m - W_e) \]
+Lumped Model Design 
+Inductance \[ L_S = \beta ~ d^{\alpha_1}_{out} ~ w^{\alpha_2} ~ d^{\alpha_3}_{avg} ~ n^{\alpha_4} ~ s^{\alpha_5} ~~~ [nH]\]
+Series Resistance \[ R_s = l / ( \sigma ~ w ~ \delta ~ (1 - e^{-t/\delta})) = k_1 ~ l/w \]
+\[ \delta = \sqrt{ 2 / (w ~ \mu ~ \sigma) } \]" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yrrapt.github.io/analogue/design/inductor/inductor-design/" />
 <meta property="og:image" content="https://yrrapt.github.io/images/og-image.png"/>
@@ -28,12 +32,20 @@
 <meta name="twitter:image" content="https://yrrapt.github.io/images/og-image.png"/>
 
 <meta name="twitter:title" content="Inductor Design"/>
-<meta name="twitter:description" content="\[ P = \frac{1}{2} \oint_S \mathbf{E} \times \mathbf{H}^* = \cdot d\mathbf{s} = P_l &#43; 2 j \omega ~ (W_m - W_e) \]"/>
+<meta name="twitter:description" content="Electromagnetics \[ P = \frac{1}{2} \oint_S \mathbf{E} \times \mathbf{H}^* = \cdot d\mathbf{s} = P_l &#43; 2 j \omega ~ (W_m - W_e) \]
+Lumped Model Design 
+Inductance \[ L_S = \beta ~ d^{\alpha_1}_{out} ~ w^{\alpha_2} ~ d^{\alpha_3}_{avg} ~ n^{\alpha_4} ~ s^{\alpha_5} ~~~ [nH]\]
+Series Resistance \[ R_s = l / ( \sigma ~ w ~ \delta ~ (1 - e^{-t/\delta})) = k_1 ~ l/w \]
+\[ \delta = \sqrt{ 2 / (w ~ \mu ~ \sigma) } \]"/>
 <meta itemprop="name" content="Inductor Design">
-<meta itemprop="description" content="\[ P = \frac{1}{2} \oint_S \mathbf{E} \times \mathbf{H}^* = \cdot d\mathbf{s} = P_l &#43; 2 j \omega ~ (W_m - W_e) \]">
+<meta itemprop="description" content="Electromagnetics \[ P = \frac{1}{2} \oint_S \mathbf{E} \times \mathbf{H}^* = \cdot d\mathbf{s} = P_l &#43; 2 j \omega ~ (W_m - W_e) \]
+Lumped Model Design 
+Inductance \[ L_S = \beta ~ d^{\alpha_1}_{out} ~ w^{\alpha_2} ~ d^{\alpha_3}_{avg} ~ n^{\alpha_4} ~ s^{\alpha_5} ~~~ [nH]\]
+Series Resistance \[ R_s = l / ( \sigma ~ w ~ \delta ~ (1 - e^{-t/\delta})) = k_1 ~ l/w \]
+\[ \delta = \sqrt{ 2 / (w ~ \mu ~ \sigma) } \]">
 <meta itemprop="datePublished" content="2020-12-20T15:02:03+01:00" />
 <meta itemprop="dateModified" content="2020-12-20T15:02:03+01:00" />
-<meta itemprop="wordCount" content="22">
+<meta itemprop="wordCount" content="247">
 <meta itemprop="image" content="https://yrrapt.github.io/images/og-image.png"/>
 
 
@@ -54,7 +66,50 @@
 </div>
 <div class="content-container">
 <main><h1>Inductor Design</h1>
+<h2 id="electromagnetics">Electromagnetics</h2>
+
 <p><span  class="math">\[ P = \frac{1}{2} \oint_S \mathbf{E} \times \mathbf{H}^* = \cdot d\mathbf{s} = P_l + 2 j \omega ~ (W_m - W_e) \]</span></p>
+
+<h2 id="lumped-model-design">Lumped Model Design</h2>
+
+<p><figure><img src="../lumped_model.png" alt="Lumped Pi Model"></figure></p>
+
+<h4 id="inductance">Inductance</h4>
+
+<p><span  class="math">\[ L_S = \beta ~ d^{\alpha_1}_{out} ~ w^{\alpha_2} ~ d^{\alpha_3}_{avg} ~ n^{\alpha_4} ~ s^{\alpha_5} ~~~ [nH]\]</span></p>
+
+<h4 id="series-resistance">Series Resistance</h4>
+
+<p><span  class="math">\[ R_s = l / ( \sigma ~ w ~ \delta ~ (1 - e^{-t/\delta})) = k_1 ~ l/w \]</span></p>
+
+<p><span  class="math">\[ \delta = \sqrt{ 2 / (w ~ \mu ~ \sigma) } \]</span></p>
+
+<h4 id="substrate-oxide-capacitance">Substrate Oxide Capacitance</h4>
+
+<p><span  class="math">\[ C_{ox} = (\epsilon_{ox} ~ l ~ w) / 2~ t_{ox} = k_2 ~ l ~ w \]</span></p>
+
+<h4 id="series-capacitance">Series Capacitance</h4>
+
+<p><span  class="math">\[ C_s = (\epsilon_{ox} ~ n ~ w^2) / (t_{ox,M1-M2}) = k_3 ~ n ~ w^2  \]</span></p>
+
+<h4 id="substrate-capacitance">Substrate Capacitance</h4>
+
+<p><span  class="math">\[ C_{sub} = (C_{sub,specifc} ~ l ~ w) / 2 = k_4 ~ l ~ w  \]</span></p>
+
+<h4 id="substrate-resistance">Substrate Resistance</h4>
+
+<p><span  class="math">\[ R_{sub} = 2 / (G_{sub,specifc} ~ l ~ w) / 2 = k_5 / (l ~ w)  \]</span></p>
+
+<h2 id="integration-into-oscillators">Integration into Oscillators</h2>
+
+<p>Considering an inductor used in a tank circuit of an LC oscillator the Noise to Carrier Ratio can be expressed as:</p>
+
+<p><span  class="math">\[ \frac{\left< v_n^2 \right>}{V_{tank}^2} \propto  \begin{cases}
+ L_{g^2_L} / I^2_{bias} ~~~(L~limited) \\
+ L ~~~~~~~~~~~~~~~~ (V~limited) \\
+ \end{cases} \]</span></p>
+
+<p>In the voltage limited regime increasing the inductance beyond the value that puts the oscillator at the edge of the voltage-limited regime will create a waste of inductance. The current also should not be increased beyond the limit of voltage and inductance limited regions to avoid the waste of power.</p>
 <div class="edit-meta">
 Last updated on 20 Dec 2020
 
@@ -62,7 +117,7 @@ Last updated on 20 Dec 2020
 <br>
 Published on 20 Dec 2020
 <br></div><nav class="pagination"><a class="nav nav-prev" href="https://yrrapt.github.io/analogue/design/inductor/" title="Inductors"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Inductors</a>
-<a class="nav nav-next" href="https://yrrapt.github.io/analogue/design/inductor/references/" title="Inductor References">Next - Inductor References <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<a class="nav nav-next" href="https://yrrapt.github.io/analogue/design/inductor/tank-design/" title="Tank Design">Next - Tank Design <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
 </footer>
 </main>
@@ -92,6 +147,7 @@ Published on 20 Dec 2020
   
 <ul class="sub-menu">
 <li class="active"><a href="https://yrrapt.github.io/analogue/design/inductor/inductor-design/">Inductor Design</a></li>
+<li class=""><a href="https://yrrapt.github.io/analogue/design/inductor/tank-design/">Tank Design</a></li>
 <li class=""><a href="https://yrrapt.github.io/analogue/design/inductor/references/">Inductor References</a></li>
 </ul>
   
@@ -110,8 +166,9 @@ Published on 20 Dec 2020
   
 <ul class="sub-menu">
 <li class=""><a href="https://yrrapt.github.io/analogue/design/pll/phase-noise/">Jitter and Phase Noise Principles</a></li>
+<li class=""><a href="https://yrrapt.github.io/analogue/design/pll/vco-design/">LC VCO Design</a></li>
 <li class=""><a href="https://yrrapt.github.io/analogue/design/pll/references/">PLL References</a></li>
-<li class=""><a href="https://yrrapt.github.io/analogue/design/pll/vco-design/">VCO Design</a></li>
+<li class=""><a href="https://yrrapt.github.io/analogue/design/pll/pll-system/">PLL Systems</a></li>
 </ul>
   
 </li>
